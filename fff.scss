@@ -1,0 +1,238 @@
+$page:#292929;
+$white:#FFFFFF;
+$main:#787878;
+
+body {
+    background-color: #292929;
+    font-family: "Montserrat Alternates", sans-serif;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    margin: 0; /* Убрать отступы */
+    display: flex; /* Используем flex для управления расположением */
+    flex-direction: column; /*  Расположение элементов вертикально */
+}
+
+.header {
+    opacity: 1;
+    padding: 10px 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: none;
+    position: relative;
+    z-index: 100;
+    max-width: 1380px; /* Ограничиваем ширину */
+    margin: 0 auto; /* Центрируем */
+}
+
+.header.sticky {
+    position: fixed; /* фиксируем header*/
+    top: 0;
+    left: 0;
+    right: 0; /* Растягиваем на всю ширину экрана */
+    margin: 0; /* Убираем отступы для правильного позиционирования */
+    width: 100%; /* Растягиваем header на всю ширину экрана*/
+    max-width: 1380px; /* Ограничиваем ширину контента*/
+    margin: 0 auto; /* Центрируем контент*/
+
+    z-index: 1000; /* Высокий z-index, чтобы перекрыть все элементы */
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+.header.transparent {
+    background-color: rgba(41, 41, 41, 0); /* Прозрачный фон */
+}
+.vd{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw; /* Занимает 100% ширины экрана */
+    z-index: -1000;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative; /* Создаем контекст позиционирования */
+    width: 100%;
+    height: 100vh; 
+    overflow: visible; /*  Измените на visible */
+    display: flex;
+    flex-direction: column;
+}
+.nav {
+    
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-item {
+    font-size: 24px;
+    margin-right: 27px;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+/*Упрощаем навигацию*/
+.header .nav{
+    display:flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.header .nav-item {
+    font-size: 24px;
+    margin-right: 27px;
+    font-weight: 700;
+}
+
+.header .nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+/*Оборачиваем header в контейнер*/
+.header .nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.header .nav-item {
+    font-size: 24px;
+    margin-right: 27px;
+    font-weight: 700;
+}
+
+.header .nav-link {
+    color: white;
+    text-decoration: none;
+}
+.inf{
+    max-width: 1380px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    display:flex;
+    justify-content: space-between;
+    
+    .inf1{
+        font-size: 64px;
+        margin-bottom: 22px;
+        font-weight: 700;
+        width: 369px;
+        height: 54px;
+    }
+    .inf2{
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 94px;
+    }
+    .inf3{
+        font-size: 64px;
+        margin-bottom: 31px;
+        font-weight: 700;
+    }
+    .inf4{
+        font-size: 24px;
+        font-weight: 400;
+        
+    }
+    .right{
+        width: 909px;
+        height: 631px;
+    }
+}
+
+
+// Медиа-запросы для адаптации
+@media (max-width: 1200px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .inf {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .left {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .right {
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .nav-item {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        
+        flex-direction: column;
+        align-items: center;
+
+        .nav {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            .nav-item {
+                margin: 10px 0;
+            }
+        }
+    }
+
+    .inf {
+        order: 0;
+        text-align: center;
+        .inf1, .inf3 {
+            font-size: 48px;
+        }
+
+        .inf2, .inf4 {
+            font-size: 18px;
+        }
+    }
+    .vd{
+        display: none;
+        order: 1;
+    }
+    .header.sticky{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        .nav-item {
+            font-size: 16px;
+        }
+    }
+
+    .inf {
+        .inf1, .inf3 {
+            font-size: 36px;
+        }
+
+        .inf2, .inf4 {
+            font-size: 16px;
+        }
+    }
+}
